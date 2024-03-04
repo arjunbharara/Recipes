@@ -1,0 +1,39 @@
+.main-container {
+  min-height: 800px;
+}
+.wrapper {
+  background: whitesmoke url('/public/img/vectorstock_1043208.png') fixed;
+  background-size: 500px;
+}
+
+/* HOME */
+.nav-link, .list-group-item {
+    cursor: pointer
+  }
+.nav-pills .nav-link.active {
+  background-color: lightslategray;
+}
+
+/* FORMS */
+.form {
+  max-width: 360px;
+  margin: 0 auto;
+  background-color: #F5F4F6;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  border-top: 6px solid #e04006;
+}
+#create {
+  max-width: 500px;
+}
+textarea.form-control {
+  width: 100%;
+  height: 350px;
+}
+
+/* FOOTER */
+footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
