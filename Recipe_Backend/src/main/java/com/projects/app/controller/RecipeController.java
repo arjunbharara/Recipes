@@ -76,5 +76,16 @@ public class RecipeController {
 		
 	}
 
+	@DeleteMapping("/{id}")
+	public ResponseEntity<?> deleteRecipe(@PathVariable Integer id){
+		try {
+			return new ResponseEntity<>(recipeService.deleteRecipe(id), HttpStatus.OK);    
+		}
+        catch (NoSuchElementException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+		
+	}
+
 	
 }

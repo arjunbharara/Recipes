@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.projects.app.dto.RecipeDTO;
 import com.projects.app.model.Category;
 import com.projects.app.model.Recipe;
+import com.projects.app.dto.ApiResponse;
 import com.projects.app.model.User;
 import com.projects.app.repository.CategoryRepository;
 import com.projects.app.repository.RecipeRepository;
@@ -72,6 +73,15 @@ public class RecipeService {
 		recipe.setAuthor(user);
 		recipe.setCreatedAt(Instant.now());
 		return recipeRepository.save(recipe);
+	}
+
+	public  ApiResponse deleteRecipe(Integer id) {
+		
+		Recipe recipe = recipeRepository.findById(id).
+				orElseThrow(() -> new com.projects.app.exception.ResourceNotFoundException("Invalid  id"));
+
+		recipeRepository.deleteById(id);
+		return new ApiResponse("Recipie Details of recipie with ID " + recipe.getId() + " deleted....");
 	}
 	
 	
